@@ -135,6 +135,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service.xiaomi_mido
 
+# Dex
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -302,14 +306,9 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-<<<<<<< HEAD
     fstab.qcom \
     init.goodix.sh \
-=======
     init.insmod.sh \
-    init.class_main.sh \
-    init.msm.usb.configfs.rc \
->>>>>>> 24b01e6... ginkgo: Improve boot time and pull in bootanim display time
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
