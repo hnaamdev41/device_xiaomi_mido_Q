@@ -36,6 +36,9 @@ allow gx_fpd storage_file:lnk_file read;
 allow gx_fpd mnt_user_file:dir search;
 r_dir_file(gx_fpd, firmware_file)
 
+#allow get attribute of some stuff
+allow { idmap netutils_wrapper tzdatacheck zygote vdc vold shell dex2oat } { gx_fpd_exec vendor_file }:file getattr;
+
 #register service in service manager
 allow gx_fpd default_android_service:service_manager find;
 
