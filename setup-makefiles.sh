@@ -29,9 +29,9 @@ export VENDOR=xiaomi
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-LINEAGE_ROOT="$MY_DIR"/../../..
+DU_ROOT="$MY_DIR"/../../..
 
-HELPER="$LINEAGE_ROOT"/vendor/aosp/build/tools/extract_utils.sh
+HELPER="$DU_ROOT"/vendor/du/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -39,7 +39,7 @@ fi
 . "$HELPER"
 
 # Initialize the helper
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$DU_ROOT" true
 
 # Copyright headers and guards
 write_headers "mido tissot"
@@ -52,7 +52,7 @@ write_footers
 
 if [ -s "$MY_DIR"/proprietary-files.txt ]; then
     # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false
+    setup_vendor "$DEVICE" "$VENDOR" "$DU_ROOT" false
 
     # Copyright headers and guards
     write_headers
