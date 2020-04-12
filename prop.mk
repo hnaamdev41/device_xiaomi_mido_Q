@@ -104,6 +104,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ro.fm.transmitter=false \
 vendor.hw.fm.init=0
 
+# FM Radio/BT
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    vendor.bluetooth.soc=cherokee
+
 # Frp
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/config
