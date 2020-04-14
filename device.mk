@@ -277,6 +277,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# OTA
+PRODUCT_PACKAGES += \
+    Updates
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
@@ -393,3 +397,4 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
