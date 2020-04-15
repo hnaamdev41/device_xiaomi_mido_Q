@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aim_mido.mk
+    $(LOCAL_DIR)/syberia_mido.mk
 
 COMMON_LUNCH_CHOICES := \
-    aim_mido-user \
-    aim_mido-userdebug \
-    aim_mido-eng
+    syberia_mido-user \
+    syberia_mido-userdebug \
+    syberia_mido-eng
