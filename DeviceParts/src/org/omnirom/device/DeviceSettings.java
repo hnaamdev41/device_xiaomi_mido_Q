@@ -40,7 +40,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
 
-import com.android.internal.util.omni.DeviceUtils;
+import com.android.internal.util.omni.ActionUtils;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -78,9 +78,9 @@ public class DeviceSettings extends PreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(KEYS_NAVBAR_CATEGORY);
             navBarCategory.removePreference(mEnableNavBar);
         } else {
-            boolean showNavBarDefault = DeviceUtils.deviceSupportNavigationBar(getActivity());
+            boolean showNavBarDefault = ActionUtils.deviceSupportNavigationBar(getActivity());
             boolean showNavBar = Settings.System.getInt(getContext().getContentResolver(),
-                    Settings.System.OMNI_NAVIGATION_BAR_SHOW, showNavBarDefault ? 1 : 0) == 1;
+                    Settings.System.NAVIGATION_BAR_SHOW, showNavBarDefault ? 1 : 0) == 1;
             mEnableNavBar.setChecked(showNavBar);
         }
 
@@ -91,7 +91,7 @@ public class DeviceSettings extends PreferenceFragment implements
 	if (preference == mEnableNavBar) {
 	boolean checked = ((SwitchPreference)preference).isChecked();
 	Settings.System.putInt(getContext().getContentResolver(),
-	Settings.System.OMNI_NAVIGATION_BAR_SHOW, checked ? 1:0);
+	Settings.System.NAVIGATION_BAR_SHOW, checked ? 1:0);
 	return true;
 	}
 	return super.onPreferenceTreeClick(preference);
