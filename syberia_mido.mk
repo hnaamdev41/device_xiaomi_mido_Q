@@ -21,17 +21,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from mido device
 $(call inherit-product, device/xiaomi/mido/device.mk)
 
-<<<<<<< HEAD:aim_mido.mk
-# Inherit some common AIM stuff.
-ifeq ($(WITH_GAPPS),true)
-WITH_MINI_GAPPS := true
-endif
-$(call inherit-product, vendor/aim/config/common_full_phone.mk)
-
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := mido
-PRODUCT_NAME := aim_mido
-=======
 # Inherit some common Syberia stuff
 $(call inherit-product, vendor/syberia/config/common.mk)
 
@@ -43,7 +32,6 @@ SYBERIA_BUILD_TYPE := OFFICIAL
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mido
 PRODUCT_NAME := syberia_mido
->>>>>>> 11f13e9... Bring For Syberia:syberia_mido.mk
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 4
 PRODUCT_MANUFACTURER := Xiaomi
